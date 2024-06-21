@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <title>All Products - Redstore</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+        <!--added a cdn link by searching font awesome4 cdn and getting this link from https://www.bootstrapcdn.com/fontawesome/ this url*/-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    </head>
+    <body>
+        <!--<div class ="header">-->
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="index.html"><img src="images/logo-wearel2.png" width="250px"></a>
+                </div>
+               <nav>
+                    <ul id="MenuItems">
+                        <li><a href="index.html">Home</a></li>
+                         <!-- <li><a href="products.html">Products</a></li>
+                         <li><a href="">About</a></li>
+                         <li><a href="">Contact</a></li> -->
+                         <li><a href="history.html">History</a></li>
+                         <!-- <li><a href="account.html">Account</a></li> -->
+
+                    </ul>
+                </nav>
+                <a href="cart.html"><img src="images/cart.png" width="30px" height="30px"></a>
+                <img src="images/menu.png" class="menu-icon" onClick="menutoggle()" >
+            </div>
+           
+        </div>
+    <!--</div>-->
+    
+        
+        <!------------------------------ Products------------------------------>
+        <!-- <div class="small-container">
+            <div class="row row-2">
+                <h2>All Products</h2>
+                <select>
+                    <option>Default sorting</option>
+                    <option>Short by price</option>
+                    <option>Short by popularity</option>
+                    <option>Short by rating</option>
+                    <option>Short by sale</option>
+                </select>
+            </div> -->
+
+            <div class="small-container">
+                <div class="row row-2">
+                    <h2>All Products</h2>
+                    <select id="product-sorting" onchange="redirectToPage()">
+                        <option value="#">Shortir</option>
+                        <option value="products.html">All Products</option>
+                        <option value="catalog-shirt.html">T-Shirts & Polos</option>
+                        <option value="catalog-hoodies.html">Hoodies & Jackets</option>
+                        <option value="catalog-bras.html">Sport Bras</option>
+                        <option value="catalog-pants.html">Pants & Shorts</option>
+                        <option value="catalog-swimwear.html">Swimwear</option>
+                    </select>
+                </div>
+            </div>
+            
+            
+            <!--<h2 class="title" >Featured Products</h2>-->
+            <div class="row">
+                    <div class="col-4">
+                        <a href="products-details.html"><img src="images/product1.webp"></a>
+                        <a href="products-details.html"><h4>Running T-Shirt Peach</h4></a>
+                        <div class="rating">
+                            
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star-half-o" ></i>
+                            <i class="fa fa-star-o" ></i>
+                        </div>
+                        <p>$50.00</p>
+                    </div>
+                    <div class="col-4">
+                        <a href="products-details.html"><img src="images/product4.webp"></a>
+                        <h4>Women's Sports Bra - Navy</h4>
+                        <div class="rating">
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star-half-o" ></i>
+                        </div>
+                        <p>$35.00</p>
+                    </div>
+                    <div class="col-4">
+                        <a href="products-details.html"><img src="images/product16.webp"></a>
+                        <h4>Blue Dress Strip</h4>
+                        <div class="rating">
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star-o" ></i>
+                        </div>
+                        <p>$15.00</p>
+                    </div>
+                    <div class="col-4">
+                        <a href="products-details.html"><img src="images/product12.webp"></a>
+                        <h4>Grey Pants Sport Women</h4>
+                        <div class="rating">
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star-o" ></i>
+                            <i class="fa fa-star-o" ></i>
+                        </div>
+                        <p>$48.00</p>
+                    </div>  
+                </div>
+            
+            <!-------------- new row----------------->
+            
+            <div class="row">
+                    <div class="col-4">
+                        <a href="products-details.html"><img src="images/product13.webp"></a>
+                        <h4>Longs Shirts Dark Blue</h4>
+                        <div class="rating">
+                            
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star-half-o" ></i>
+                            <i class="fa fa-star-o" ></i>
+                        </div>
+                        <p>$50.00</p>
+                    </div>
+                    <div class="col-4">
+                        <a href="products-details.html"><img src="images/product10.webp"></a>
+                        <h4>Women's Full-Zip Hoodie TR Light - Grey</h4>
+                        <div class="rating">
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star-half-o" ></i>
+                        </div>
+                        <p>$21.00</p>
+                    </div>
+                    <div class="col-4">
+                        <a href="products-details.html"><img src="images/product2.webp"></a>
+                        <h4>Womens HyperBoom Splice Muscleback - Black/Pink</h4>
+                        <div class="rating">
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star-o" ></i>
+                        </div>
+                        <p>$09.00</p>
+                    </div>
+                    <div class="col-4">
+                        <a href="products-details.html"><img src="images/product3.webp"></a>
+                        <h4>Running T-Shirts Red Light</h4>
+                        <div class="rating">
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star-o" ></i>
+                            <i class="fa fa-star-o" ></i>
+                        </div>
+                        <p>$35.00</p>
+                    </div>  
+                </div>
+            <!--new row for the latest product-->
+                <div class="row">
+                    <div class="col-4">
+                        <a href="products-details.html"><img src="images/product6.webp"></a>
+                        <h4>Women's Pacer 3-Stripes Knit Shorts - Black</h4>
+                        <div class="rating">
+                            
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star-half-o" ></i>
+                            <i class="fa fa-star-o" ></i>
+                        </div>
+                        <p>$10.00</p>
+                    </div>
+                    <div class="col-4">
+                        <a href="products-details.html"><img src="images/product11.webp"></a>
+                        <h4>Women's Sports Bra - Black</h4>
+                        <div class="rating">
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star-half-o" ></i>
+                        </div>
+                        <p>$48.00</p>
+                    </div>
+                    <div class="col-4">
+                        <a href="products-details.html"><img src="images/product14.webp"></a>
+                        <h4>Running T-Shirts White</h4>
+                        <div class="rating">
+                            <i class="fa fa-star-o" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star-o" ></i>
+                        </div>
+                        <p>$15.00</p>
+                    </div>
+                    <div class="col-4">
+                        <a href="products-details.html"><img src="images/converse4.webp"></a>
+                        <h4>White Shirts Black</h4>
+                        <div class="rating">
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star-o" ></i>
+                            <i class="fa fa-star-o" ></i>
+                        </div>
+                        <p>$21.00</p>
+                    </div>  
+                    <div class="page-btn">
+                        <span onclick="navigateToPage(1)">1</span>
+                        <span onclick="navigateToPage(2)">2</span>
+                        <span onclick="navigateToPage(3)">3</span>
+                        <span onclick="navigateToNextPage()">&#8594;</span>
+                    </div>
+                </div>
+            
+            <!-- <div class="page-btn">
+                <span onclick="catalogbras.html">1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>&#8594;</span>
+            </div> -->
+
+            
+            
+        </div>
+        
+        
+        
+        <!----------------------------------footer------------------------------------->
+        <div class ="footer">
+            <div class="container">
+                
+                <div class="row">
+                    <div class="footer-col-3">
+                        <h3>Useful Links</h3>
+                       <ul>
+                           <li>Coupons</li>
+                           <li>Blog Post</li>
+                           <li>Return Policy</li>
+                           <li>Join Affiliate</li>
+                        </ul>
+                    </div>
+                    <div class="footer-col-2">
+                        <img src="images/logo-wearel.png">
+                        <!-- <p>Our Purpose Is To Sustainably Make the Pleasure and Benefits of Sports Accessible to the Many.</p> -->
+                    </div>
+                    <div class="footer-col-4">
+                        <h3>Follow us</h3>
+                       <ul>
+                           <li>Facebook</li>
+                           <li>Twitter</li>
+                           <li>Instagram</li>
+                           <li>Youtube</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+                
+                <hr><!--horizontal line-->
+                <p class="copyright">Copyright 2024 - A Aurel D</p>
+                
+            </div>
+        </div>
+        
+        
+        <!-----------------------------------js for toggle menu----------------------------------------------->
+        <script>
+            var menuItems=document.getElementById("MenuItems");
+            
+            MenuItems.style.maxHeight="0px";
+            function menutoggle(){
+                if(MenuItems.style.maxHeight == "0px"){
+                    MenuItems.style.maxHeight="200px";
+                }
+                else{
+                    MenuItems.style.maxHeight="0px";
+                }
+            }
+            function redirectToPage() {
+                var select = document.getElementById("product-sorting");
+                var selectedValue = select.value;
+                if (selectedValue) {
+                    window.location.href = selectedValue;
+                }
+            }
+            // Fungsi untuk mengarahkan ke halaman tertentu
+            function navigateToPage(pageNumber) {
+                window.location.href = 'products2.html?page=' + pageNumber;
+            }
+
+            // Fungsi untuk mengarahkan ke halaman berikutnya
+            function navigateToNextPage() {
+                var currentPage = getCurrentPage();
+                var nextPage = currentPage + 1;
+                window.location.href = 'products2.html?page=' + nextPage;
+            }
+
+            // Fungsi untuk mendapatkan halaman saat ini dari URL
+            function getCurrentPage() {
+                var urlParams = new URLSearchParams(window.location.search);
+                var page = urlParams.get('page');
+                return parseInt(page) || 1; // Default ke halaman 1 jika parameter tidak ada
+            }
+        </script>    
+    </body>
+</html>

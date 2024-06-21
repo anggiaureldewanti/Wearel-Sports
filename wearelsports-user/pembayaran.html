@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products - Redstore</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 300px;
+            text-align: center;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="payment">
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo-wearel2.png" width="250px"></a>
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Catalog</a></li>
+                    <li><a href="history.html">History</a></li>
+                </ul>
+            </nav>
+            <a href="cart.html"><img src="images/cart.png" width="30px" height="30px"></a>
+            <img src="images/menu.png" class="menu-icon" onClick="menutoggle()">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="checkout-section">
+            <div class="checkout-form">
+                <h2>Contact Information</h2>
+                <form id="orderForm">
+                    <div class="form-group">
+                        <label for="first-name">First name</label>
+                        <input type="text" id="first-name" name="first-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Last name</label>
+                        <input type="text" id="last-name" name="last-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email">
+                    </div>  
+                    <h2>Shipping Address</h2>
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="text" id="address" name="address">
+                    </div>
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" id="city" name="city">
+                    </div>
+                    <div class="form-group">
+                        <label for="state">State/Province</label>
+                        <input type="text" id="state" name="state">
+                    </div>
+                    <div class="form-group">
+                        <label for="zip">ZIP/Postal Code</label>
+                        <input type="text" id="zip" name="zip">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <button type="submit">Complete Order</button>
+                </form>
+            </div>
+            <div class="order-summary">
+                <h2>Your Order</h2>
+                <div class="order-item">
+                    <img src="images/product1.webp" alt="Hoka 1">
+                    <div class="item-details">
+                        <p>Running T-Shirts Peach</p>
+                        <p>Size: 9 | Qty: 1</p>
+                        <p>Rp 115.000</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="order-item">
+                    <img src="images/product22.webp" alt="Hoka 5">
+                    <div class="item-details">
+                        <p>C-Black Hoodies</p>
+                        <p>Size: 11 | Qty: 1</p>
+                        <p>Rp 200.000</p>
+                    </div>
+                </div>
+                <hr> 
+                <div class="order-item">
+                    <img src="images/product12.webp" alt="Hoka 8">
+                    <div class="item-details">
+                        <p>Pants Running Stripes</p>
+                        <p>Size: 4 | Qty: 1</p>
+                        <p>Rp 99.000</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="order-summary-total">
+                    <p>Subtotal <span>Rp 414.000</span></p>
+                    <p>Shipping <span>Rp 25.000</span></p>
+                    <p>Tax <span>Rp 11.000</span></p>
+                    <p>Total <span>Rp 450.000</span></p>
+                </div>
+                <hr>
+                <div class="payment-method">
+                    <h3>Payment Method</h3>
+                    <label><input type="radio" name="payment" value="cash_on_delivery"> Cash on Delivery</label>
+                    <label><input type="radio" name="payment" value="debit_card"> Debit Card</label>
+                    <label><input type="radio" name="payment" value="bank_transfer"> Bank Transfer</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal structure -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <!-- <span class="close">&times;</span> -->
+            <p>Order successfully!</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                   <ul>
+                       <li>Coupons</li>
+                       <li>Blog Post</li>
+                       <li>Return Policy</li>
+                       <li>Join Affiliate</li>
+                    </ul>
+                </div>
+                <div class="footer-col-12">
+                    <img src="images/logo-wearel.png">
+                </div>
+                <div class="footer-col-4">
+                    <h3>Follow us</h3>
+                   <ul>
+                       <li>Facebook</li>
+                       <li>Twitter</li>
+                       <li>Instagram</li>
+                       <li>Youtube</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">Copyright 2024 - A Aurel D</p>
+        </div>
+    </div>
+    
+    <script>
+        var menuItems = document.getElementById("MenuItems");
+
+        MenuItems.style.maxHeight = "0px";
+        function menutoggle() {
+            if (MenuItems.style.maxHeight == "0px") {
+                MenuItems.style.maxHeight = "200px";
+            } else {
+                MenuItems.style.maxHeight = "0px";
+            }
+        }
+
+        document.getElementById("orderForm").addEventListener("submit", function(event){
+            event.preventDefault();
+            var modal = document.getElementById("myModal");
+            modal.style.display = "block";
+            setTimeout(function(){
+                window.location.href = "history.html";
+            }, 1000);
+        });
+
+        var closeModal = document.getElementsByClassName("close")[0];
+        closeModal.onclick = function() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            var modal = document.getElementById("myModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        let cardNumInput = document.querySelector('#cardNum');
+        cardNumInput.addEventListener('keyup', () => { 
+            let cNumber = cardNumInput.value;
+            cNumber = cNumber.replace(/\s/g, "");
+
+            if (Number(cNumber)) {
+                cNumber = cNumber.match(/.{1,4}/g);
+                cNumber = cNumber.join(" ");
+                cardNumInput.value = cNumber;
+            }
+        });
+    </script>
+</body>
+</html>

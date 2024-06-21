@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <title>Footwear | Retail Shoes</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--added a cdn link by searching font awesome4 cdn and getting this link from https://www.bootstrapcdn.com/fontawesome/ this url*/-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            .checkout-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.checkout-form, .order-summary {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+}
+
+.checkout-form {
+    flex-basis: 60%;
+}
+
+.order-summary {
+    flex-basis: 35%;
+    background-color: #ecebeb;
+    /* padding: 10px; */
+    border-radius: 5px;
+}
+
+.checkout-form h2, .order-summary h2 {
+    margin-bottom: 20px;
+}
+
+.checkout-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-group input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+button[type="submit"] {
+    padding: 15px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button[type="submit"]:hover {
+    background-color: #555;
+}
+
+.order-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.order-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+
+.item-details p {
+    margin-left: 10px;
+}
+
+.order-summary-total {
+    display: flex;
+    flex-direction: column;
+    /* margin-top: 20px; */
+}
+
+.order-summary-total p {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+
+.order-summary-total p span {
+    margin-left: auto;
+}
+
+
+.coupon {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.coupon input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px 0 0 5px;
+}
+
+.coupon button[type="button"] {
+    padding: 10px 20px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+}
+
+.coupon button[type="button"]:hover {
+    background-color: #555;
+}
+
+.payment-method {
+    margin-top: 25px;
+}
+
+.payment-method h3 {
+    margin-bottom: 10px;
+}
+
+.payment-method label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.payment-method input[type="radio"] {
+    margin-right: 10px;
+}
+
+
+@media (max-width: 768px) {
+    .checkout-section {
+        flex-direction: column;
+    }
+
+    .order-summary {
+        order: 1;
+    }
+
+    .checkout-form {
+        order: 2;
+    }
+
+    .checkout-form, .order-summary {
+        min-width: 100%;
+        flex-basis: auto;
+    }
+}
+
+hr{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-color: #cecaad;
+}
+
+.history-item {
+    border-bottom: 1px solid #ddd;
+    padding-left: 20px 0;
+    margin-bottom: 20px;
+    background-color: #fcf9f6;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.history-item h2 {
+    padding: 10px;
+}
+
+.history-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.payment-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.payment-method {
+    font-size: 0.9em;
+    color: #777;
+    margin-top: -1px;
+}
+
+.payment-method span {
+    font-weight: bold;
+    color: #333;
+}
+
+.total-price {
+    font-size: 1em;
+    font-weight: bold;
+    color: #333;
+}
+
+.item-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.product-item {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 6px;
+}
+
+.product-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.product-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .item-details {
+        grid-template-columns: 1fr;
+    }
+
+    .product-item {
+        flex-direction: row;
+    }
+
+    .product-item img {
+        margin-right: 15px;
+    }
+}
+        </style>
+    </head>
+<body>
+    <div class="payment">
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo-wearel2.png" width="250px"></a>
+            </div>
+           <nav>
+                <ul id="MenuItems">
+                    <li><a href="index.html">Home</a></li>
+                    <!-- <li><a href="products.html">Catalog</a></li> -->
+                    <li><a href="products.html">Catalog</a></li>
+                    <li><a href="history.html">History</a></li>
+                    <!-- <li><a href="account.html">Account</a></li> -->
+                    
+                </ul>
+            </nav>
+            <a href="cart.html"><img src="images/cart.png" width="30px" height="30px"></a>
+            <img src="images/menu.png" class="menu-icon" onClick="menutoggle()" >
+        </div>
+       
+    </div>
+    <div class="container">
+        <div class="checkout-section">
+            <div class="checkout-form">
+                <h2>Contact Information</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="first-name">First name</label>
+                        <input type="text" id="first-name" name="first-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Last name</label>
+                        <input type="text" id="last-name" name="last-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email">
+                    </div>  
+                    <h2>Shipping Address</h2>
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="text" id="address" name="address">
+                    </div>
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" id="city" name="city">
+                    </div>
+                    <div class="form-group">
+                        <label for="state">State/Province</label>
+                        <input type="text" id="state" name="state">
+                    </div>
+                    <div class="form-group">
+                        <label for="zip">ZIP/Postal Code</label>
+                        <input type="text" id="zip" name="zip">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <button type="submit">Complete Order</button>
+                </form>
+            </div>
+            <div class="order-summary">
+                <h2>Your Order</h2>
+                <div class="order-item">
+                    <img src="images/hoka_1.webp" alt="Hoka 1">
+                    <div class="item-details">
+                        <p>Downshifter Sports Shoes</p>
+                        <p>Size: 9 | Qty: 1</p>
+                        <p>$50.00</p>
+                        
+                    </div>
+                </div>
+                <hr>
+                <div class="order-item">
+                    <img src="images/hoka5.webp" alt="Hoka 5">
+                    <div class="item-details">
+                        <p>Men's Clifton 9</p>
+                        <p>Size: 11 | Qty: 1</p>
+                        <p>$50.00</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="order-item">
+                    <img src="images/hoka8.jpg" alt="Hoka 8">
+                    <div class="item-details">
+                        <p>Lace-Up Running Shoes</p>
+                        <p>Size: 11 | Qty: 1</p>
+                        <p>$50.00</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="order-summary-total">
+                    <p>Subtotal <span>$150.00</span></p>
+                    <p>Shipping <span>$8.95</span></p>
+                    <p>Tax <span>$20.95</span></p>
+                    <p>Grand Total <span>$179.90</span></p>
+                </div>
+                <hr>
+                <div class="coupon">
+                    <input type="text" placeholder="Enter your coupon code">
+                    <button type="button">Apply</button>
+                </div>
+                <div class="payment-method">
+                    <h3>Payment Method</h3>
+                    <label><input type="radio" name="payment" value="cash_on_delivery"> Cash on Delivery</label>
+                    <label><input type="radio" name="payment" value="debit_card"> Debit Card</label>
+                    <label><input type="radio" name="payment" value="bank_transfer"> Bank Transfer</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var menuItems=document.getElementById("MenuItems");
+        
+        MenuItems.style.maxHeight="0px";
+        function menutoggle(){
+            if(MenuItems.style.maxHeight == "0px"){
+                MenuItems.style.maxHeight="200px";
+            }
+            else{
+                MenuItems.style.maxHeight="0px";
+            }
+        }
+
+        function redirectToCheckoutPage() {
+        window.location.href = 'index.html'; // Ganti dengan URL tujuan Anda
+    }
+    </script>
+</body>
+</html>
